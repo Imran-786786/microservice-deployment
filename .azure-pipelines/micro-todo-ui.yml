@@ -18,3 +18,15 @@ stages:
             tags: |
               $(Build.BuildId)
               latest
+  - stage: Deplyment
+    jobs:
+      - job: kuberneteDeployment
+        displayName: Kubernetes Deployment Job
+        steps:
+        - task: KubernetesManifest@1
+          inputs:
+            action: 'deploy'
+            connectionType: 'kubernetesServiceConnection'
+            kubernetesServiceConnection: 'k8'
+            namespace: 'default'
+            manifests: 'manifests/deployment.yml'
