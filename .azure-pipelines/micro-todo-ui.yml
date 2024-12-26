@@ -1,0 +1,17 @@
+trigger: none
+pool:
+  name: mySytem
+
+stages:
+  - stage: DockerImage
+    displayName: Docker Image
+    jobs:
+      - job: DockerImageJob
+        displayName: Docker Image Job
+        steps:
+        - task: Docker@2
+          inputs:
+            containerRegistry: 'ACR'
+            repository: 'todoui'
+            command: 'buildAndPush'
+            Dockerfile: '**/Dockerfile'
