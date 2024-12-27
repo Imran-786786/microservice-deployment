@@ -30,3 +30,4 @@ stages:
             kubernetesServiceConnection: 'k8'
             namespace: 'default'
             manifests: 'manifests/deployment.yml'
+            containers: 'k8acr.azurecr.io/todoui:$(Build.BuildId)'
