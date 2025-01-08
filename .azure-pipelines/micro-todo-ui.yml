@@ -12,7 +12,7 @@ stages:
         - task: Docker@2
           inputs:
             containerRegistry: 'DockerHub'
-            repository: 'imran0077/newtodoapp'
+            repository: 'use-your-repo-name'
             command: 'buildAndPush'
             Dockerfile: '**/Dockerfile'
             tags: |
@@ -30,4 +30,4 @@ stages:
             kubernetesServiceConnection: 'k8'
             namespace: 'default'
             manifests: 'manifests/deployment.yml'
-            containers: 'imran0077/newtodoapp:$(Build.BuildId)'
+            containers: 'use-your-repo-name:$(Build.BuildId)'
