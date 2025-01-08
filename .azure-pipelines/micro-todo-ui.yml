@@ -12,7 +12,7 @@ stages:
         - task: Docker@2
           inputs:
             containerRegistry: 'DockerHub'
-            repository: 'todoui'
+            repository: 'imran0077/newtodoapp'
             command: 'buildAndPush'
             Dockerfile: '**/Dockerfile'
             tags: |
