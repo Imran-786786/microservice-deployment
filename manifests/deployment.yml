@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: todoui
-        image: imran0077/newtodoapp:$(Build.BuildId)
+        image: use_your_repo_name:$(Build.BuildId)
         ports:
         - containerPort: 80
