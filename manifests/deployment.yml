@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: todoui
-        image: k8acr.azurecr.io/todoui:134
+        image: asifk8acr.azurecr.io/todoui:$(Build.BuildId)
         ports:
         - containerPort: 80
